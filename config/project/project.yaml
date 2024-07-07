@@ -1,0 +1,22 @@
+dateModified: 1720257250
+email:
+  fromEmail: zayd.maadal@hotmail.com
+  fromName: echoflow
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    4271f66b-661b-4326-b80d-a20475e29b30: echoflow # echoflow
+    8819ea6a-b0cd-49ea-8029-d6e3476e1fe7: echoflow # echoflow
+system:
+  edition: solo
+  live: true
+  name: echoflow
+  schemaVersion: 5.0.0.21
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

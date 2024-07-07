@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en-US
+name: echoflow
+primary: true
+siteGroup: 8819ea6a-b0cd-49ea-8029-d6e3476e1fe7 # echoflow
+sortOrder: 1
