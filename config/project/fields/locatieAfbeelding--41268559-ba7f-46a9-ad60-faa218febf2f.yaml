@@ -1,0 +1,36 @@
+columnSuffix: null
+handle: locatieAfbeelding
+instructions: null
+name: 'Locatie Afbeelding'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds: null
+  branchLimit: null
+  defaultUploadLocationSource: 'volume:38a2a7b1-d010-4a32-91d2-ff338a5f8a3d' # Locatie Afbeelding
+  defaultUploadLocationSubpath: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  previewMode: full
+  restrictFiles: false
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:cb9db396-4aae-44e7-979e-1a2a71b1a88a' # Site Images
+  restrictedLocationSubpath: null
+  selectionLabel: null
+  showCardsInGrid: false
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources:
+    - 'volume:38a2a7b1-d010-4a32-91d2-ff338a5f8a3d' # Locatie Afbeelding
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

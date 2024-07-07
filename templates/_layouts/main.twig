@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>Echo Tickets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    {% do craft.app.view.registerCssFile('@web/styles/style.css') %}
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div id="top">
+            <div class="logo">
+                {% set logoImage = craft.assets.volume('siteImages').filename('image.png').one() %}
+                {% if logoImage %}
+                    <img src="{{ logoImage.url }}" alt="Logo" />
+                {% endif %}
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="concerts.html">Concerten</a></li>
+                    <li><a href="artists.html">Artiesten</a></li>
+                    <li><a href="venues.html">Locaties</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1>Ontdek de beste concerten met Echo Tickets</h1>
+    </header>
+    
+    {% block content %}
+    
+    {% endblock %}
+
+</body>
+</html>

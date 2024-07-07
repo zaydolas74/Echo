@@ -1,0 +1,49 @@
+altTranslationKeyFormat: null
+altTranslationMethod: none
+fieldLayouts:
+  6f33ad8b-8d5a-4ccf-b1bd-6897dfc8f775:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 696b5bca-ad6c-474f-a34a-a2bcf32b22a8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 6434bcc1-4657-47b9-a3c1-543d8a22c34b
+        userCondition: null
+fs: concert
+handle: concertImage
+name: 'Concert Image'
+sortOrder: 3
+subpath: '@web/images/uploads/Concert'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: ''
+transformSubpath: '@webroot//images/uploads/Concert'

@@ -1,0 +1,140 @@
+color: sky
+fieldLayouts:
+  5af903c1-468a-40c2-b365-9ce271abc140:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 5ea1dbf3-63b5-40d6-bf3f-b66ddf3d5726
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0bcf9f44-8f09-44f9-a164-57b6e1739f92 # Beschrijving
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5b06b79f-7bf9-4b3e-b0b7-866b1637ebb9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: cb4dac09-30f7-420d-b90a-985d3a50d1ce # Datum en Tijd
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3225e65f-3445-4db7-952d-741a79645505
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c2773548-cc82-4936-a6f7-354ebf8c30b8 # Locatie
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a7ef1425-2d1d-4af2-b9da-f096f0aa441d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3d41a18d-56b1-4afb-8b7d-92d69a8b295e # Artiesten
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 59bcfc5b-ab34-4602-adfd-140be925b855
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 22eecbaa-12ee-4a1b-9cff-e4ea505d02a3 # Concert Afbeelding
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dcb023c5-5a7d-488e-8daa-b5185f8789fa
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 52c626ab-cac7-433a-9223-7088be6db0e7 # Prijs
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2a132a6a-a3b3-4dd1-b0ff-07048319c9f9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b8094437-ab26-4181-a9c0-5b2fb365be1b
+        userCondition: null
+handle: concert
+hasTitleField: true
+icon: party-horn
+name: Concert
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

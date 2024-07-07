@@ -1,0 +1,29 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - ecbcb4da-44bc-4c49-8a85-60ba5786fea6 # Concert
+  - 4a9c786b-6735-46e7-af58-d3e622333b7f # Artiest
+  - 45911286-29d0-43c9-953f-ea35ec247732 # Locatie
+handle: concerten
+maxAuthors: 1
+name: Concerten
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  4271f66b-661b-4326-b80d-a20475e29b30: # echoflow
+    enabledByDefault: true
+    hasUrls: true
+    template: concerts/_entry
+    uriFormat: 'concerts/{slug}'
+type: channel

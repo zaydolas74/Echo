@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 45911286-29d0-43c9-953f-ea35ec247732 # Locatie
+handle: locaties
+maxAuthors: 1
+name: Locaties
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  4271f66b-661b-4326-b80d-a20475e29b30: # echoflow
+    enabledByDefault: true
+    hasUrls: true
+    template: locaties/_entry
+    uriFormat: 'locaties/{slug}'
+type: channel

@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 4a9c786b-6735-46e7-af58-d3e622333b7f # Artiest
+handle: artiesten
+maxAuthors: 1
+name: 'Artiesten '
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  4271f66b-661b-4326-b80d-a20475e29b30: # echoflow
+    enabledByDefault: true
+    hasUrls: true
+    template: artists/_entry
+    uriFormat: 'artists/{slug}'
+type: channel

@@ -1,12 +1,70 @@
-dateModified: 1720257250
+dateModified: 1720381614
 email:
   fromEmail: zayd.maadal@hotmail.com
   fromName: echoflow
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  artiest:
+    hasUrls: true
+    name: Artiest
+    settings:
+      path: '@webroot/images/uploads/Artiest'
+    type: craft\fs\Local
+    url: '@web/images/uploads/Artiest'
+  concert:
+    hasUrls: true
+    name: Concert
+    settings:
+      path: '@webroot/images/uploads/Artiest'
+    type: craft\fs\Local
+    url: '@web/images/uploads/Artiest'
+  genre:
+    hasUrls: true
+    name: Genre
+    settings:
+      path: '@webroot//images/uploads/Genre'
+    type: craft\fs\Local
+    url: '@web/images/uploads/Genre'
+  locatie:
+    hasUrls: true
+    name: Locatie
+    settings:
+      path: '@webroot/images/uploads/Locatie'
+    type: craft\fs\Local
+    url: '@web//images/uploads/Locatie'
+  siteimages:
+    hasUrls: true
+    name: SiteImages
+    settings:
+      path: '@webroot/images/uploads/siteImages'
+    type: craft\fs\Local
+    url: '@web/images/uploads/siteImages'
 meta:
   __names__:
+    0bcf9f44-8f09-44f9-a164-57b6e1739f92: Beschrijving # Beschrijving
+    3d41a18d-56b1-4afb-8b7d-92d69a8b295e: Artiesten # Artiesten
+    4a9c786b-6735-46e7-af58-d3e622333b7f: Artiest # Artiest
+    5d122e13-4b75-436a-9ba3-1dfc6d68c26d: Locaties # Locaties
+    5ffbb91d-3f87-49fb-a024-4b482a2f6597: Naam # Naam
+    22eecbaa-12ee-4a1b-9cff-e4ea505d02a3: 'Concert Afbeelding' # Concert Afbeelding
+    38a2a7b1-d010-4a32-91d2-ff338a5f8a3d: 'Locatie Afbeelding' # Locatie Afbeelding
+    52c626ab-cac7-433a-9223-7088be6db0e7: Prijs # Prijs
+    76eb4d16-89e3-41af-8140-93fad0f5d8a7: 'Public Schema' # Public Schema
+    449f1606-bbba-49aa-98c7-7dba0c57af1a: 'Artiest Image' # Artiest Image
     4271f66b-661b-4326-b80d-a20475e29b30: echoflow # echoflow
     8819ea6a-b0cd-49ea-8029-d6e3476e1fe7: echoflow # echoflow
+    51542f65-0505-4f4a-88ca-d6ef21e3aa87: Adres # Adres
+    41268559-ba7f-46a9-ad60-faa218febf2f: 'Locatie Afbeelding' # Locatie Afbeelding
+    45911286-29d0-43c9-953f-ea35ec247732: Locatie # Locatie
+    a5ea3a1a-a81b-458a-abfb-0135588dacd1: 'Artiest Afbeelding' # Artiest Afbeelding
+    c0b8c987-248b-42d1-a3df-8fcd5835ff04: Containers # Containers
+    c2e93fe0-77b4-4fd7-9e76-9a28ac969c56: 'Concert Image' # Concert Image
+    c2773548-cc82-4936-a6f7-354ebf8c30b8: Locatie # Locatie
+    cb4dac09-30f7-420d-b90a-985d3a50d1ce: 'Datum en Tijd' # Datum en Tijd
+    cb9db396-4aae-44e7-979e-1a2a71b1a88a: 'Site Images' # Site Images
+    e812944c-9e7d-4c17-b505-fc8b4ac15bce: Concerten # Concerten
+    ecbcb4da-44bc-4c49-8a85-60ba5786fea6: Concert # Concert
+    f9558807-9f4f-4f8b-ba35-54728df789dc: 'Artiesten ' # Artiesten 
 system:
   edition: solo
   live: true
