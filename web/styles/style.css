@@ -108,19 +108,6 @@ section h1 {
   border-radius: 10px;
 }
 
-.item-container {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  flex-shrink: 0;
-  margin-right: 30px;
-}
-
 .item-container:first-child {
   margin-left: 5px;
 }
@@ -154,15 +141,35 @@ section h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2); /* Adjust opacity here */
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px 10px 0 0;
-  pointer-events: none; /* Ensures overlay doesn't interfere with other elements */
+  pointer-events: none;
+}
+.item-container {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.item-container:hover {
+  transform: translateY(5px);
+  cursor: pointer;
 }
 
 .item-info {
   background-color: white;
   padding: 20px;
   border-radius: 0 0 10px 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-container:hover .item-info {
+  background-color: #f0f0f0;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #menu-ham {
@@ -182,6 +189,16 @@ section h1 {
 a {
   text-decoration: none;
   color: black;
+}
+
+.info-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#price {
+  font-weight: 600;
 }
 
 @media screen and (max-width: 900px) {

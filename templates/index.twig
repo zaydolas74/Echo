@@ -10,6 +10,7 @@
     <div class="flex-container">
         {% for concert in concerten %}
             <div class="item-container">
+                <a href="{{ concert.url }}">
                 <div class="item-image">
                     {% set concertImage = concert.concertAfbeelding.one() %}
                     {% if concertImage %}
@@ -23,9 +24,12 @@
                 <div class="item-info">
                     <h2>{{ concert.title }}</h2>
                     {% set locatieEntry = concert.locatie.one() %}
+                    <div class="info-flex">
                     <p><i class="fa-solid fa-location-dot"></i> {{ locatieEntry.naam }}</p>
-                    <p>€{{ concert.prijs }}</p>
+                    <p id="price">€{{ concert.prijs }}</p>
+                    </div>
                 </div>
+                </a>
             </div>
         {% endfor %}
     </div>
@@ -37,6 +41,7 @@
     <div class="flex-container">
         {% for artiest in artiesten %}
             <div class="item-container">
+            <a href="{{ artiest.url }}">
                 <div class="item-image">
                     {% set artiestImage = artiest.artiestAfbeelding.one() %}
                     {% if artiestImage %}
@@ -48,6 +53,7 @@
                 <div class="item-info">
                     <h2>{{ artiest.naam }}</h2>
                 </div>
+            </a>
             </div>
         {% endfor %}
         </div>
