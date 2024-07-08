@@ -16,7 +16,9 @@
             <div class="logo">
                 {% set logoImage = craft.assets.volume('siteImages').filename('image.png').one() %}
                 {% if logoImage %}
+                <a href="https://my-craft-project.ddev.site/">
                     <img src="{{ logoImage.url }}" alt="Logo" />
+                </a>
                 {% endif %}
             </div>
             <nav>
