@@ -1,24 +1,30 @@
 {% extends "_layouts/main" %}
 
 {% block content %}
- <div id="container">
-        
-        <section class="concert-info">
-            <div class="concert-image">
-                {% set concertImage = entry.concertAfbeelding.one() %}
-                {% if concertImage %}
-                    <img src="{{ concertImage.getUrl('containers') }}" alt="{{ entry.title }}">
-                {% else %}
-                    <img src="path/to/default-concert-image.jpg" alt="{{ entry.title }}">
-                {% endif %}
+<div id="container">
+    <div class="concert-details">
+            {% set concertImage = entry.concertAfbeelding.one() %}
+            {% if concertImage %}
+                <img src="{{ concertImage.url }}" alt="{{ entry.title }}">
+            {% else %}
+                <img src="path/to/default-concert-image.jpg" alt="{{ entry.title }}">
+            {% endif %}
+        <div id="concert-details-info">
+            <h1>{{ entry.title }}</h1>
+            <p><strong>Beschrijving:</strong> {{ entry.beschrijving }}</p>
+            <div id="all-flex">
+                <div class="info-flex" id="prijs">
+                    <p id="price">€ {{ entry.prijs }}</p>
+                    <p>{{ entry.artiesten | join(', ') }}</p>
+                </div>
+                <div class="info-flex" id="locatie">
+                    <p><i class="fa-solid fa-location-dot"></i> {{ entry.locatie.naam }}</p>
+                </div>
             </div>
-            
-            <div class="concert-details">
-                <p><strong>Beschrijving:</strong> {{ entry.beschrijving }}</p>
-                <p><strong>Datum en Tijd:</strong> {{ entry.datumTijd|date('M d, Y - h:i A') }}</p>
-                <p><strong>Locatie:</strong> {{ entry.locatie.title }}</p>
-                <p><strong>Prijs:</strong> €{{ entry.prijs }}</p>
-            </div>
-        </section>
+            <a href="#" class="book-button">Boek Nu</a>
+        </div>
     </div>
+</div>
+    
+    
 {% endblock %}
