@@ -1,7 +1,7 @@
 {% extends "_layouts/main" %}
 
 {% block content %}
-<div id="container">
+<div id="concert-container">
     <div class="concert-details">
             {% set concertImage = entry.concertAfbeelding.one() %}
             {% if concertImage %}
@@ -11,14 +11,19 @@
             {% endif %}
         <div id="concert-details-info">
             <h1>{{ entry.title }}</h1>
-            <p><strong>Beschrijving:</strong> {{ entry.beschrijving }}</p>
+            <p id="description">{{ entry.beschrijving }}</p>
             <div id="all-flex">
                 <div class="info-flex" id="prijs">
                     <p id="price">€ {{ entry.prijs }}</p>
-                    <p>{{ entry.artiesten | join(', ') }}</p>
+                                       <div class="artists">
+                        {% for artiest in entry.artiesten %}
+                            <a href="/artiesten/{{ artiest.slug }}" class="artist-tag">{{ artiest.title }}</a>
+                        {% endfor %}
+                    </div>
                 </div>
                 <div class="info-flex" id="locatie">
-                    <p><i class="fa-solid fa-location-dot"></i> {{ entry.locatie.naam }}</p>
+                                        {% set locatieEntry = entry.locatie.one() %}
+                    <p><i class="fa-solid fa-location-dot"></i> {{ locatieEntry.naam }}</p>
                 </div>
             </div>
             <a href="#" class="book-button">Boek Nu</a>
