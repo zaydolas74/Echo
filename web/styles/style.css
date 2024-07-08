@@ -97,6 +97,16 @@ section h1 {
   gap: 20px;
 }
 
+.flex-container-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  overflow-x: auto;
+  margin-left: 30px;
+  margin-right: 30px;
+  gap: 20px;
+}
+
 .flex-container::-webkit-scrollbar {
   height: 10px;
 }
@@ -236,6 +246,11 @@ a {
   }
 
   .flex-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .flex-container-wrap {
     margin-left: 20px;
     margin-right: 20px;
   }

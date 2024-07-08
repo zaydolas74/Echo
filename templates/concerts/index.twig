@@ -8,7 +8,7 @@
     <h1>Concerten</h1>
     <div class="flex-container-wrap">
         {% for concert in concerten %}
-            <div class="item-container-wrap">
+            <div class="item-container">
                 <a href="{{ concert.url }}">
                 <div class="item-image">
                     {% set concertImage = concert.concertAfbeelding.one() %}
@@ -31,6 +31,7 @@
                 </a>
             </div>
         {% endfor %}
+        
     </div>
     </section>
     </div>
