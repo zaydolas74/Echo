@@ -12,7 +12,7 @@ header {
   padding: 20px 35px 0;
   padding-bottom: 100px;
   background-color: #333333;
-  background-image: url("path/to/your/concert-background-image.jpg");
+  background-image: url("path/to/your/entry-background-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -251,7 +251,7 @@ a {
   }
 }
 
-#concert-container {
+#entry-container {
   position: relative;
   z-index: 2;
   border-radius: 30px;
@@ -260,21 +260,21 @@ a {
   padding-bottom: 0px;
 }
 
-.concert-details {
+.entry-details {
   display: flex;
   flex-direction: row;
   background-color: white;
   border-radius: 32px;
 }
 
-.concert-details img {
+.entry-details img {
   width: 50%;
   object-fit: cover;
   border-radius: 30px 0 0 30px;
   min-height: 500px;
 }
 
-#concert-details-info h1 {
+#entry-details-info h1 {
   font-size: 2em;
   font-weight: 700;
   color: black;
@@ -321,7 +321,7 @@ a {
   margin: 0;
 }
 
-#concert-details-info {
+#entry-details-info {
   padding-left: 30px;
   padding-right: 30px;
   width: 50%;
@@ -369,13 +369,13 @@ a {
 }
 
 @media screen and (max-width: 900px) {
-  .concert-details {
+  .entry-details {
     flex-direction: column;
     align-items: center;
     padding-right: 0;
   }
 
-  .concert-details img {
+  .entry-details img {
     width: 100%;
     border-radius: 30px 30px 0 0;
     min-height: 0px;
@@ -388,7 +388,7 @@ a {
     margin-right: auto;
   }
 
-  #concert-details-info {
+  #entry-details-info {
     width: 90%;
     padding-bottom: 30px;
     padding-top: 30px;

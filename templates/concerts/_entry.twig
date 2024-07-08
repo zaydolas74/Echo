@@ -1,15 +1,15 @@
 {% extends "_layouts/main" %}
 
 {% block content %}
-<div id="concert-container">
-    <div class="concert-details">
+<div id="entry-container">
+    <div class="entry-details">
             {% set concertImage = entry.concertAfbeelding.one() %}
             {% if concertImage %}
                 <img src="{{ concertImage.url }}" alt="{{ entry.title }}">
             {% else %}
                 <img src="path/to/default-concert-image.jpg" alt="{{ entry.title }}">
             {% endif %}
-        <div id="concert-details-info">
+        <div id="entry-details-info">
             <h1>{{ entry.title }}</h1>
             <p id="description">{{ entry.beschrijving }}</p>
             <div id="all-flex">
