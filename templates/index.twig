@@ -25,8 +25,8 @@
                     <h2>{{ concert.title }}</h2>
                     {% set locatieEntry = concert.locatie.one() %}
                     <div class="info-flex">
-                    <p><i class="fa-solid fa-location-dot"></i> {{ locatieEntry.naam }}</p>
                     <p id="price">€{{ concert.prijs }}</p>
+                    <p><i class="fa-solid fa-location-dot"></i> {{ locatieEntry.naam }}</p>
                     </div>
                 </div>
                 </a>
@@ -35,10 +35,36 @@
     </div>
     </section>
 
+    <section id="Venues">
+        <h1>Locaties</h1>
+        <div class="flex-container">
+        {% set venues = craft.entries.section('locaties').all() %}
+        {% for venue in venues %}
+            <div class="item-container">
+                <a href="{{ venue.url }}">
+                <div class="item-image">
+                    {% set venueImage = venue.locatieAfbeelding.one() %}
+                    {% if venueImage %}
+                        {% do venueImage.setTransform('containers') %}
+                        <img src="{{ venueImage.url }}" alt="{{ venue.title }}" />
+                    {% else %}
+                        <img src="path/to/default-venue-image.jpg" alt="{{ venue.title }}" />
+                    {% endif %}
+                    <div class="overlay"></div>
+                </div>
+                <div class="item-info">
+                    <h2>{{ venue.title }}</h2>
+                    <p><i class="fa-solid fa-location-dot"></i> {{ venue.adres }}</p>
+                </div>
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+    </section>
 
     <section id="Artisest">
-    <h1>Artiesten</h1>
-    <div class="flex-container">
+        <h1>Artiesten</h1>
+        <div class="flex-container">
         {% for artiest in artiesten %}
             <div class="item-container">
             <a href="{{ artiest.url }}">
@@ -59,30 +85,7 @@
         </div>
     </section>
 
-    <section id="Venues">
-    <h1>Locaties</h1>
-    <div class="flex-container">
-        {% set venues = craft.entries.section('locaties').all() %}
-        {% for venue in venues %}
-            <div class="item-container">
-                <div class="item-image">
-                    {% set venueImage = venue.locatieAfbeelding.one() %}
-                    {% if venueImage %}
-                        {% do venueImage.setTransform('containers') %}
-                        <img src="{{ venueImage.url }}" alt="{{ venue.title }}" />
-                    {% else %}
-                        <img src="path/to/default-venue-image.jpg" alt="{{ venue.title }}" />
-                    {% endif %}
-                    <div class="overlay"></div>
-                </div>
-                <div class="item-info">
-                    <h2>{{ venue.title }}</h2>
-                    <p><i class="fa-solid fa-location-dot"></i> {{ venue.adres }}</p>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-    </section>
+
 </div>
 
 

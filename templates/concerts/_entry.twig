@@ -17,7 +17,7 @@
                     <p id="price">€ {{ entry.prijs }}</p>
                                        <div class="artists">
                         {% for artiest in entry.artiesten %}
-                            <a href="/artiesten/{{ artiest.slug }}" class="artist-tag">{{ artiest.title }}</a>
+                            <a href="{{ artiest.url }}" class="artist-tag">{{ artiest.title }}</a>
                         {% endfor %}
                     </div>
                 </div>
