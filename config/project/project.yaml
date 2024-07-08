@@ -1,4 +1,4 @@
-dateModified: 1720381614
+dateModified: 1720482727
 email:
   fromEmail: zayd.maadal@hotmail.com
   fromName: echoflow
@@ -65,6 +65,11 @@ meta:
     e812944c-9e7d-4c17-b505-fc8b4ac15bce: Concerten # Concerten
     ecbcb4da-44bc-4c49-8a85-60ba5786fea6: Concert # Concert
     f9558807-9f4f-4f8b-ba35-54728df789dc: 'Artiesten ' # Artiesten 
+plugins:
+  social-share:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 system:
   edition: solo
   live: true
