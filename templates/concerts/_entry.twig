@@ -27,21 +27,39 @@
                 </div>
             </div>
             <div class="share-button">
-{% set button = craft.socialShare.getShareButton('facebook') %}
+    {% set facebookButton  = craft.socialShare.getShareButton('facebook') %}
+    {% set instagramButton = craft.socialShare.getShareButton('x') %}
+    
+
 
 {{ tag('a', {
-     html: '<i class="fab fa-facebook"></i> Share on Facebook',
+     html: '<i class="fab fa-facebook"></i>',
     href: 'javascript:void();',
     onclick: 'window.open(this.dataset.url, "ss_share_dialog", "width=626,height=436");',
-    class: ['social-btn', button.handle],
-    title: button.name,
+    class: ['social-btn', facebookButton.handle],
+    title: facebookButton.name,
     data: {
-        url: button.providerUrl,
+        url: facebookButton.providerUrl,
     },
     style: {
-        color: button.primaryColor,
+        color: facebookButton.primaryColor,
     },
 }) }}
+
+{{ tag('a', {
+        html: '<i class="fa-brands fa-x-twitter"></i>',
+        href: 'javascript:void();',
+        onclick: 'window.open(this.dataset.url, "ss_share_dialog", "width=626,height=436");',
+        class: ['social-btn', instagramButton.handle],
+        title: instagramButton.name,
+        data: {
+            url: instagramButton.providerUrl,
+            image: concertImage.url,
+        },
+        style: {
+            color: instagramButton.primaryColor,
+        },
+    }) }}
             </div>
             <a href="#" class="book-button">Boek Nu</a>
         </div>

@@ -384,6 +384,10 @@ a {
   background-color: #0056b3;
 }
 
+.share-button {
+  font-size: 2em;
+}
+
 @media screen and (max-width: 900px) {
   .entry-details {
     flex-direction: column;
