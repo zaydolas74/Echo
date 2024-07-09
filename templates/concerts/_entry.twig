@@ -28,8 +28,10 @@
             </div>
             <div class="share-button">
     {% set facebookButton  = craft.socialShare.getShareButton('facebook') %}
-    {% set instagramButton = craft.socialShare.getShareButton('x') %}
-    
+    {% set twitterButton = craft.socialShare.getShareButton('x') %}
+    {% set pinterestButton = craft.socialShare.getShareButton('pinterest') %}
+
+
 
 
 {{ tag('a', {
@@ -50,14 +52,27 @@
         html: '<i class="fa-brands fa-x-twitter"></i>',
         href: 'javascript:void();',
         onclick: 'window.open(this.dataset.url, "ss_share_dialog", "width=626,height=436");',
-        class: ['social-btn', instagramButton.handle],
-        title: instagramButton.name,
+        class: ['social-btn', twitterButton.handle],
+        title: twitterButton.name,
         data: {
-            url: instagramButton.providerUrl,
-            image: concertImage.url,
+            url: twitterButton.providerUrl,
         },
         style: {
-            color: instagramButton.primaryColor,
+            color: twitterButton.primaryColor,
+        },
+    }) }}
+
+{{ tag('a', {
+        html: '<i class="fa-brands fa-pinterest"></i>', 
+        href: 'javascript:void();',
+        onclick: 'window.open(this.dataset.url, "ss_share_dialog", "width=626,height=436");',
+        class: ['social-btn', pinterestButton.handle],
+        title: pinterestButton.name,
+        data: {
+            url: pinterestButton.providerUrl,
+        },
+        style: {
+            color: pinterestButton.primaryColor,
         },
     }) }}
             </div>
