@@ -20,6 +20,7 @@
                     {% endif %}
                     <div class="overlay"></div>
                 </div>
+                
                 <div class="item-info">
                     <h2>{{ concert.title }}</h2>
                     {% set locatieEntry = concert.locatie.one() %}
@@ -30,6 +31,7 @@
                 </div>
                 </a>
             </div>
+
         {% endfor %}
         
     </div>
