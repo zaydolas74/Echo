@@ -26,6 +26,23 @@
                     <p><i class="fa-solid fa-location-dot"></i> {{ locatieEntry.naam }}</p>
                 </div>
             </div>
+            <div class="share-button">
+{% set button = craft.socialShare.getShareButton('facebook') %}
+
+{{ tag('a', {
+     html: '<i class="fab fa-facebook"></i> Share on Facebook',
+    href: 'javascript:void();',
+    onclick: 'window.open(this.dataset.url, "ss_share_dialog", "width=626,height=436");',
+    class: ['social-btn', button.handle],
+    title: button.name,
+    data: {
+        url: button.providerUrl,
+    },
+    style: {
+        color: button.primaryColor,
+    },
+}) }}
+            </div>
             <a href="#" class="book-button">Boek Nu</a>
         </div>
     </div>
