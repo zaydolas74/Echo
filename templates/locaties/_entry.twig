@@ -1,0 +1,80 @@
+{% extends "_layouts/main" %}
+
+{% block content %}
+<div id="entry-container">
+    <div class="entry-details">
+            {% set locatieImage = entry.locatieAfbeelding.one() %}
+            {% if locatieImage %}
+                <img src="{{ locatieImage.url }}" alt="{{ entry.title }}">
+            {% else %}
+                <img src="path/to/default-concert-image.jpg" alt="{{ entry.title }}">
+            {% endif %}
+        <div id="entry-details-info">
+            <h1>{{ entry.title }}</h1>
+            <p id="description">{{ entry.beschrijving }}</p>
+            <div id="all-flex">
+                <div class="info-flex" id="prijs">
+                                       <div class="artists">
+                        {% for concerten in entry.concert %}
+                            <a href="{{ concerten.url }}" class="artist-tag">{{ concerten.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="share-button">
+    {% set facebookButton  = craft.socialShare.getShareButton('facebook') %}
+    {% set twitterButton = craft.socialShare.getShareButton('x') %}
+    {% set pinterestButton = craft.socialShare.getShareButton('pinterest') %}
+
+
+
+
+{{ tag('a', {
+     html: '<i class="fab fa-facebook"></i>',
+    href: 'javascript:void();',
+    onclick: 'window.open(this.dataset.url, "ss_share_dialog", "width=626,height=436");',
+    class: ['social-btn', facebookButton.handle],
+    title: facebookButton.name,
+    data: {
+        url: facebookButton.providerUrl,
+    },
+    style: {
+        color: facebookButton.primaryColor,
+    },
+}) }}
+
+{{ tag('a', {
+        html: '<i class="fa-brands fa-x-twitter"></i>',
+        href: 'javascript:void();',
+        onclick: 'window.open(this.dataset.url, "ss_share_dialog", "width=626,height=436");',
+        class: ['social-btn', twitterButton.handle],
+        title: twitterButton.name,
+        data: {
+            url: twitterButton.providerUrl,
+        },
+        style: {
+            color: twitterButton.primaryColor,
+        },
+    }) }}
+
+{{ tag('a', {
+        html: '<i class="fa-brands fa-pinterest"></i>', 
+        href: 'javascript:void();',
+        onclick: 'window.open(this.dataset.url, "ss_share_dialog", "width=626,height=436");',
+        class: ['social-btn', pinterestButton.handle],
+        title: pinterestButton.name,
+        data: {
+            url: pinterestButton.providerUrl,
+        },
+        style: {
+            color: pinterestButton.primaryColor,
+        },
+    }) }}
+            </div>
+            <a href="#" class="book-button">Boek Nu</a>
+        </div>
+    </div>
+</div>
+    
+    
+{% endblock %}
