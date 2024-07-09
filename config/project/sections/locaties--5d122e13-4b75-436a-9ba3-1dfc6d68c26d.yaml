@@ -2,6 +2,7 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   - 45911286-29d0-43c9-953f-ea35ec247732 # Locatie
+  - ecbcb4da-44bc-4c49-8a85-60ba5786fea6 # Concert
 handle: locaties
 maxAuthors: 1
 name: Locaties

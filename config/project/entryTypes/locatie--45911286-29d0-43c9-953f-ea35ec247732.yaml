@@ -81,6 +81,21 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: 7062f3b1-6205-4495-9522-f44a901a7617 # Concert
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a9656ad3-7621-485e-92de-84a6ef4fe870
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             fieldUid: 41268559-ba7f-46a9-ad60-faa218febf2f # Locatie Afbeelding
             handle: null
             includeInCards: false
