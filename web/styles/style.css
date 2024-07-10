@@ -69,7 +69,7 @@ header h1 {
   text-align: center;
 }
 
-#container {
+.container {
   position: relative;
   z-index: 2;
   border-top-left-radius: 30px;
@@ -80,7 +80,7 @@ header h1 {
 }
 
 section {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 section h1 {
@@ -270,11 +270,15 @@ a {
 
 #entry-container {
   position: relative;
+  margin: auto;
+  min-height: 500px;
   z-index: 2;
   border-radius: 30px;
   background-color: white;
   margin-top: -30px;
   padding-bottom: 0px;
+  margin-bottom: 50px;
+  width: 80%;
 }
 
 .entry-details {
@@ -288,7 +292,7 @@ a {
   width: 50%;
   object-fit: cover;
   border-radius: 30px 0 0 30px;
-  min-height: 200px;
+  min-height: 500px;
 }
 
 #entry-details-info h1 {
@@ -413,5 +417,60 @@ a {
     padding-bottom: 30px;
     padding-top: 30px;
     gap: 20px;
+  }
+
+  #entry-container {
+    width: 90%;
+  }
+}
+
+#filter-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 20px; /* Voeg verticale en horizontale marge toe */
+}
+
+#filter-container form {
+  display: flex;
+  gap: 20px;
+}
+
+#filter-container form input[type="submit"] {
+  background-color: #2a2a19;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#filter-container form input[type="submit"]:hover {
+  background-color: #1a1a19;
+}
+
+#filter-container form select {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+#sort {
+  padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+  #filter-container {
+    justify-content: center; /* Centreer de filtercontainer op kleinere schermen */
+    margin: 20px 10px; /* Pas marges aan voor kleinere schermen */
+  }
+
+  #filter-container form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #filter-container form select,
+  #filter-container form input[type="submit"] {
+    width: 100%; /* Maak de invoervelden breed op kleinere schermen */
+    margin-bottom: 10px; /* Voeg wat ruimte toe tussen de velden */
   }
 }

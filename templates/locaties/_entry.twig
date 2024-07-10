@@ -14,6 +14,7 @@
             <p id="description">{{ entry.beschrijving }}</p>
             <div id="all-flex">
                 <div class="info-flex" id="prijs">
+                
                                        <div class="artists">
                         {% for concerten in entry.concert %}
                             <a href="{{ concerten.url }}" class="artist-tag">{{ concerten.title }}</a>
@@ -71,7 +72,7 @@
         },
     }) }}
             </div>
-            <a href="#" class="book-button">Boek Nu</a>
+            <a href="#" class="book-button">Zoek Op</a>
         </div>
     </div>
 </div>

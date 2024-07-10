@@ -3,7 +3,17 @@
 {% block content %}
         {% set concerten = craft.entries.section('concerten').all() %}
 
- <div id="container">
+ <div class="container" id="sort">
+ <div id="filter-container">
+            <form action="" method="get" id="form">
+                <select id="sort" name="sort">
+                    <option value="default">Sorteer op</option>
+                    <option value="desc">Hoog naar Laag</option>
+                    <option value="asc">Laag naar Hoog</option>
+                </select>
+                <input type="submit" value="Filter">
+            </form>
+        </div>
     <section id="Concerts">
     <h1>Concerten</h1>
     <div class="flex-container-wrap">

@@ -1,0 +1,36 @@
+{% extends "./_layouts/main" %}
+
+{% block content %}
+        {% set artiesten = craft.entries.section('artiesten').all() %}
+
+ <div class="container">
+
+    <section id="Concerts">
+    <h1>Artiesten</h1>
+    <div class="flex-container-wrap">
+        {% for artiest in artiesten %}
+            <div class="item-container">
+                <a href="{{ artiest.url }}">
+                <div class="item-image">
+                    {% set artiestImage = artiest.artiestAfbeelding.one() %}
+                    {% if artiestImage %}
+                        {% do artiestImage.setTransform('containers') %}
+                        <img src="{{ artiestImage.url }}" alt="{{ artiest.title }}" />
+                    {% else %}
+                        <img src="path/to/default-concert-image.jpg" alt="{{ artiest.title }}" />
+                    {% endif %}
+                    <div class="overlay"></div>
+                </div>
+                
+                <div class="item-info">
+                    <h2>{{ artiest.naam }}</h2>
+                </div>
+                </a>
+            </div>
+
+        {% endfor %}
+        
+    </div>
+    </section>
+    </div>
+{% endblock %}

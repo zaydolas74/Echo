@@ -1,7 +1,32 @@
 {% extends "_layouts/main" %}
 
 {% block content %}
-    <article class="concert-detail">
-
-    </article>
+<div id="entry-container">
+    <div class="entry-details">
+            {% set artistImage = entry.artiestAfbeelding.one() %}
+            {% if artistImage %}
+                <img src="{{ artistImage.url }}" alt="{{ entry.title }}">
+            {% else %}
+                <img src="path/to/default-concert-image.jpg" alt="{{ entry.title }}">
+            {% endif %}
+        <div id="entry-details-info">
+            <h1>{{ entry.naam }}</h1>
+            <p id="description">{{ entry.beschrijving }}</p>
+            <div id="all-flex">
+                <div class="info-flex" id="prijs">
+                
+                    <div class="artists">
+                        {% for concerten in entry.concert %}
+                            <a href="{{ concerten.url }}" class="artist-tag">{{ concerten.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+ 
+            <a href="#" class="book-button">Zoek Op</a>
+        </div>
+    </div>
+</div>
+    
+    
 {% endblock %}
