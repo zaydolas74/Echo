@@ -3,6 +3,7 @@
   "prefer-stable": true,
   "require": {
     "craftcms/cms": "^5.0.0",
+    "craftcms/element-api": "^4.1.0",
     "verbb/social-share": "2.0.1",
     "vlucas/phpdotenv": "^5.4.0"
   },

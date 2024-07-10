@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6a02269aeb970295b930e67f7553b10",
+    "content-hash": "5f81a67cd424fe2efb8bf3aa32cdde12",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -414,6 +414,56 @@
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
             "time": "2024-07-02T16:28:41+00:00"
+        },
+        {
+            "name": "craftcms/element-api",
+            "version": "4.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/element-api/zipball/3fbcff86e8caf912c4f614e24555deef7d846384",
+                "reference": "3fbcff86e8caf912c4f614e24555deef7d846384",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.3.0|^5.0.0-beta.1",
+                "league/fractal": "^0.20.1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Element API",
+                "handle": "element-api",
+                "documentationUrl": "https://github.com/craftcms/element-api/blob/v2/README.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\elementapi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Create a JSON API for your elements in Craft",
+            "keywords": [
+                "api",
+                "cms",
+                "craftcms",
+                "json",
+                "yii2"
+            ],
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/element-api/issues?state=open",
+                "source": "https://github.com/craftcms/element-api",
+                "docs": "https://github.com/craftcms/element-api/blob/v2/README.md",
+                "rss": "https://github.com/craftcms/element-api/commits/v2.atom"
+            },
+            "time": "2024-03-14T13:15:22+00:00"
         },
         {
             "name": "craftcms/plugin-installer",
@@ -1522,6 +1572,55 @@
                 "jwt"
             ],
             "time": "2023-01-02T13:28:00+00:00"
+        },
+        {
+            "name": "league/fractal",
+            "version": "0.20.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/8b9d39b67624db9195c06f9c1ffd0355151eaf62",
+                "reference": "8b9d39b67624db9195c06f9c1ffd0355151eaf62",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "suggest": {
+                "illuminate/pagination": "The Illuminate Pagination component.",
+                "pagerfanta/pagerfanta": "Pagerfanta Paginator",
+                "zendframework/zend-paginator": "Zend Framework Paginator"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.20.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Fractal\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Phil Sturgeon",
+                    "email": "me@philsturgeon.uk",
+                    "homepage": "http://philsturgeon.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Handle the output of complex data structures ready for API output.",
+            "homepage": "http://fractal.thephpleague.com/",
+            "keywords": [
+                "api",
+                "json",
+                "league",
+                "rest"
+            ],
+            "time": "2022-04-11T12:47:17+00:00"
         },
         {
             "name": "league/oauth1-client",
