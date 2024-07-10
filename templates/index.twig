@@ -16,8 +16,6 @@
                     {% if concertImage %}
                         {% do concertImage.setTransform('containers') %}
                         <img src="{{ concertImage.url }}" alt="{{ concert.title }}" />
-                    {% else %}
-                        <img src="path/to/default-concert-image.jpg" alt="{{ concert.title }}" />
                     {% endif %}
                     <div class="overlay"></div>
                 </div>
@@ -47,8 +45,6 @@
                     {% if venueImage %}
                         {% do venueImage.setTransform('containers') %}
                         <img src="{{ venueImage.url }}" alt="{{ venue.title }}" />
-                    {% else %}
-                        <img src="path/to/default-venue-image.jpg" alt="{{ venue.title }}" />
                     {% endif %}
                     <div class="overlay"></div>
                 </div>

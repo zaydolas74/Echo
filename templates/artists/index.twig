@@ -16,8 +16,6 @@
                     {% if artiestImage %}
                         {% do artiestImage.setTransform('containers') %}
                         <img src="{{ artiestImage.url }}" alt="{{ artiest.title }}" />
-                    {% else %}
-                        <img src="path/to/default-concert-image.jpg" alt="{{ artiest.title }}" />
                     {% endif %}
                     <div class="overlay"></div>
                 </div>
