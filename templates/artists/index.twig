@@ -1,34 +1,51 @@
 {% extends "./_layouts/main" %}
 
 {% block content %}
-        {% set artiesten = craft.entries.section('artiesten').all() %}
+    {% set sort = craft.app.request.getParam('sort') %}
+    {% set artiesten = craft.entries.section('artiesten') %}
 
- <div class="container">
+    {% if sort == 'asc' %}
+        {% set artiesten = artiesten.orderBy('title asc').all() %}
+    {% elseif sort == 'desc' %}
+        {% set artiesten = artiesten.orderBy('title desc').all() %}
+    {% else %}
+        {% set artiesten = artiesten.all() %}
+    {% endif %}
 
-    <section id="Concerts">
-    <h1>Artiesten</h1>
-    <div class="flex-container-wrap">
-        {% for artiest in artiesten %}
-            <div class="item-container">
-                <a href="{{ artiest.url }}">
-                <div class="item-image">
-                    {% set artiestImage = artiest.artiestAfbeelding.one() %}
-                    {% if artiestImage %}
-                        {% do artiestImage.setTransform('containers') %}
-                        <img src="{{ artiestImage.url }}" alt="{{ artiest.title }}" />
-                    {% endif %}
-                    <div class="overlay"></div>
-                </div>
-                
-                <div class="item-info">
-                    <h2>{{ artiest.naam }}</h2>
-                </div>
-                </a>
+    <div class="container" id="sort">
+        <div id="filter-container">
+            <form action="" method="get" id="form">
+                <select id="sort" name="sort">
+                    <option value="default" {% if sort == 'default' %}selected{% endif %}>Sorteer op</option>
+                    <option value="asc" {% if sort == 'asc' %}selected{% endif %}>A-Z</option>
+                    <option value="desc" {% if sort == 'desc' %}selected{% endif %}>Z-A</option>
+                </select>
+                <input type="submit" value="Filter">
+            </form>
+        </div>
+
+        <section id="Concerts">
+            <h1>Artiesten</h1>
+            <div class="flex-container-wrap">
+                {% for artiest in artiesten %}
+                    <div class="item-container">
+                        <a href="{{ artiest.url }}">
+                            <div class="item-image">
+                                {% set artiestImage = artiest.artiestAfbeelding.one() %}
+                                {% if artiestImage %}
+                                    {% do artiestImage.setTransform('containers') %}
+                                    <img src="{{ artiestImage.url }}" alt="{{ artiest.title }}" />
+                                {% endif %}
+                                <div class="overlay"></div>
+                            </div>
+
+                            <div class="item-info">
+                                <h2>{{ artiest.naam }}</h2>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
-
-        {% endfor %}
-        
-    </div>
-    </section>
+        </section>
     </div>
 {% endblock %}

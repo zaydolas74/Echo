@@ -1,50 +1,58 @@
 {% extends "./_layouts/main" %}
 
 {% block content %}
-        {% set concerten = craft.entries.section('concerten').all() %}
+    {% set sort = craft.app.request.getParam('sort') %}
+    {% set concerten = craft.entries.section('concerten') %}
 
- <div class="container" id="sort">
- <div id="filter-container">
+    {% if sort == 'asc' %}
+        {% set concerten = concerten.orderBy('title asc').all() %}
+    {% elseif sort == 'desc' %}
+        {% set concerten = concerten.orderBy('title desc').all() %}
+    {% else %}
+        {% set concerten = concerten.all() %}
+    {% endif %}
+
+    <div class="container" id="sort">
+        <div id="filter-container">
             <form action="" method="get" id="form">
                 <select id="sort" name="sort">
-                    <option value="default">Sorteer op</option>
-                    <option value="desc">Hoog naar Laag</option>
-                    <option value="asc">Laag naar Hoog</option>
+                    <option value="default" {% if sort == 'default' %}selected{% endif %}>Sorteer op</option>
+                    <option value="asc" {% if sort == 'asc' %}selected{% endif %}>A-Z</option>
+                    <option value="desc" {% if sort == 'desc' %}selected{% endif %}>Z-A</option>
                 </select>
                 <input type="submit" value="Filter">
             </form>
         </div>
-    <section id="Concerts">
-    <h1>Concerten</h1>
-    <div class="flex-container-wrap">
-        {% for concert in concerten %}
-            <div class="item-container">
-                <a href="{{ concert.url }}">
-                <div class="item-image">
-                    {% set concertImage = concert.concertAfbeelding.one() %}
-                    {% if concertImage %}
-                        {% do concertImage.setTransform('containers') %}
-                        <img src="{{ concertImage.url }}" alt="{{ concert.title }}" />
-                    {% else %}
-                        <img src="path/to/default-concert-image.jpg" alt="{{ concert.title }}" />
-                    {% endif %}
-                    <div class="overlay"></div>
-                </div>
-                
-                <div class="item-info">
-                    <h2>{{ concert.title }}</h2>
-                    {% set locatieEntry = concert.locatie.one() %}
-                    <div class="info-flex">
-                    <p id="price">€{{ concert.prijs }}</p>
-                    <p><i class="fa-solid fa-location-dot"></i> {{ locatieEntry.naam }}</p>
-                    </div>
-                </div>
-                </a>
-            </div>
 
-        {% endfor %}
-        
-    </div>
-    </section>
+        <section id="Concerts">
+            <h1>Concerten</h1>
+            <div class="flex-container-wrap">
+                {% for concert in concerten %}
+                    <div class="item-container">
+                        <a href="{{ concert.url }}">
+                            <div class="item-image">
+                                {% set concertImage = concert.concertAfbeelding.one() %}
+                                {% if concertImage %}
+                                    {% do concertImage.setTransform('containers') %}
+                                    <img src="{{ concertImage.url }}" alt="{{ concert.title }}" />
+                                {% else %}
+                                    <img src="path/to/default-concert-image.jpg" alt="{{ concert.title }}" />
+                                {% endif %}
+                                <div class="overlay"></div>
+                            </div>
+                            
+                            <div class="item-info">
+                                <h2>{{ concert.title }}</h2>
+                                {% set locatieEntry = concert.locatie.one() %}
+                                <div class="info-flex">
+                                    <p id="price">€{{ concert.prijs }}</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> {{ locatieEntry.naam }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
     </div>
 {% endblock %}

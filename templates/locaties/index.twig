@@ -1,35 +1,52 @@
 {% extends "./_layouts/main" %}
 
 {% block content %}
-        {% set locaties = craft.entries.section('locaties').all() %}
+    {% set sort = craft.app.request.getParam('sort') %}
+    {% set locaties = craft.entries.section('locaties') %}
 
- <div class="container">
+    {% if sort == 'asc' %}
+        {% set locaties = locaties.orderBy('title asc').all() %}
+    {% elseif sort == 'desc' %}
+        {% set locaties = locaties.orderBy('title desc').all() %}
+    {% else %}
+        {% set locaties = locaties.all() %}
+    {% endif %}
 
-    <section id="Concerts">
-    <h1>Locaties</h1>
-    <div class="flex-container-wrap">
-        {% for locatie in locaties %}
-            <div class="item-container">
-                <a href="{{ locatie.url }}">
-                <div class="item-image">
-                    {% set locatieImage = locatie.locatieAfbeelding.one() %}
-                    {% if locatieImage %}
-                        {% do locatieImage.setTransform('containers') %}
-                        <img src="{{ locatieImage.url }}" alt="{{ locatie.title }}" />
-                    {% endif %}
-                    <div class="overlay"></div>
-                </div>
-                
-                <div class="item-info">
-                    <h2>{{ locatie.title }}</h2>
-                    <p><i class="fa-solid fa-location-dot"></i> {{ locatie.adres }}</p>
-                </div>
-                </a>
+    <div class="container" id="sort">
+        <div id="filter-container">
+            <form action="" method="get" id="form">
+                <select id="sort" name="sort">
+                    <option value="default" {% if sort == 'default' %}selected{% endif %}>Sorteer op</option>
+                    <option value="asc" {% if sort == 'asc' %}selected{% endif %}>A-Z</option>
+                    <option value="desc" {% if sort == 'desc' %}selected{% endif %}>Z-A</option>
+                </select>
+                <input type="submit" value="Filter">
+            </form>
+        </div>
+
+        <section id="Concerts">
+            <h1>Locaties</h1>
+            <div class="flex-container-wrap">
+                {% for locatie in locaties %}
+                    <div class="item-container">
+                        <a href="{{ locatie.url }}">
+                            <div class="item-image">
+                                {% set locatieImage = locatie.locatieAfbeelding.one() %}
+                                {% if locatieImage %}
+                                    {% do locatieImage.setTransform('containers') %}
+                                    <img src="{{ locatieImage.url }}" alt="{{ locatie.title }}" />
+                                {% endif %}
+                                <div class="overlay"></div>
+                            </div>
+
+                            <div class="item-info">
+                                <h2>{{ locatie.title }}</h2>
+                                <p><i class="fa-solid fa-location-dot"></i> {{ locatie.adres }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
-
-        {% endfor %}
-        
-    </div>
-    </section>
+        </section>
     </div>
 {% endblock %}
